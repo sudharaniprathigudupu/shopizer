@@ -1,11 +1,12 @@
 pipeline {
-    agent any
-    triggers { pollSCM('* * * * *') }
+    agent {label 'jdk11'}
+    triggers { 
+        pollSCM('* * * * *')
+         }
     stages {
         stage ('clone') {
             steps {
-                git url: 'https://github.com/sudharaniprathigudupu/shopizer.git',
-                 branch: 'developer'
+                git url: 'https://github.com/sudharaniprathigudupu/shopizer.git', branch : 'developer'
             }
         }
         stage ('build') {
