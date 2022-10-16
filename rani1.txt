@@ -5,7 +5,7 @@ pipeline {
         stage ('clone') {
             steps {
                 git url: 'https://github.com/sudharaniprathigudupu/shopizer.git',
-                 branch: 'devloper'
+                 branch: 'developer'
             }
         }
         stage ('build') {
