@@ -1,11 +1,11 @@
 pipeline {
     agent any
-    triggers { pollSCM('* * * * *') }
+    triggers { cron('30 17 * * *') }
     stages {
         stage ('clone') {
             steps {
                 git url: 'https://github.com/sudharaniprathigudupu/shopizer.git',
-                 branch: 'developer'
+                 branch: 'release'
             }
         }
         stage ('build') {
